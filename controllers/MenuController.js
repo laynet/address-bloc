@@ -1,4 +1,6 @@
 const inquirer = require("inquirer");
+const dateFormat = require("dateformat");
+var day = dateFormat(new Date(), "dd.mm.yyyy h:mm:s:ss");
 
 module.exports = class MenuController {
   constructor() {
@@ -49,7 +51,7 @@ module.exports = class MenuController {
   }
 
   getDate() {
-    console.log("date");
+    console.log(day);
     this.main();
   }
 
