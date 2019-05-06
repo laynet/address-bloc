@@ -1,4 +1,6 @@
 const inquirer = require("inquirer");
+const dateFormat = require("dateformat");
+var day = dateFormat(new Date(), "dd.mm.yyyy h:mm:s:ss");
 
 module.exports = class MenuController {
   constructor() {
@@ -7,7 +9,7 @@ module.exports = class MenuController {
         type: "list",
         name: "mainMenuChoice",
         message: "Please choose from an option below: ",
-        choices: ["Add new contact", "Exit"]
+        choices: ["Add new contact", "Get Date", "Exit"]
       }
     ];
     this.contacts = [];
@@ -22,8 +24,12 @@ module.exports = class MenuController {
           case "Add new contact":
             this.addContact();
             break;
+          case "Get Date":
+            this.getDate();
+            break;
           case "Exit":
             this.exit();
+
           default:
             console.log("Invalid input");
             this.main();
@@ -44,8 +50,17 @@ module.exports = class MenuController {
     this.main();
   }
 
+  getDate() {
+    console.log(day);
+    this.main();
+  }
+
   exit() {
     console.log("Thanks for using AddressBloc!");
     process.exit();
+  }
+
+  getContactCount() {
+    return this.contacts.length;
   }
 };
