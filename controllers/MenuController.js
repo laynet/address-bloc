@@ -65,6 +65,6 @@ module.exports = class MenuController {
   }
 
   remindMe() {
-    //return a string containging the text "Learning is a life-long pursuit" - use TDD to implement this feature
+    return "Learning is a life-long pursuit";
   }
 };
