@@ -13,7 +13,7 @@ module.exports = class MenuController {
         choices: ["Add new contact", "Get Date", "Exit"]
       }
     ];
-    this.book = newContactController();
+    this.book = new ContactController();
   }
 
   main() {
