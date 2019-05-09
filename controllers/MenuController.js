@@ -1,6 +1,7 @@
 const inquirer = require("inquirer");
 const dateFormat = require("dateformat");
-var day = dateFormat(new Date(), "dd.mm.yyyy h:mm:s:ss");
+const day = dateFormat(new Date(), "dd.mm.yyyy h:mm:s:ss");
+const ContactController = require("./ContactController");
 
 module.exports = class MenuController {
   constructor() {
@@ -12,7 +13,7 @@ module.exports = class MenuController {
         choices: ["Add new contact", "Get Date", "Exit"]
       }
     ];
-    this.contacts = [];
+    this.book = newContactController();
   }
 
   main() {
@@ -58,5 +59,13 @@ module.exports = class MenuController {
   exit() {
     console.log("Thanks for using AddressBloc!");
     process.exit();
+  }
+
+  getContactCount() {
+    return this.contacts.length;
+  }
+
+  remindMe() {
+    return "Learning is a life-long pursuit";
   }
 };
