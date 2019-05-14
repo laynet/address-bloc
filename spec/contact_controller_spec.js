@@ -19,9 +19,9 @@ describe("ContactController", () => {
   //#2
   describe("#addContact()", () => {
     it("should add a single contact into the book", () => {
-      expect(this.book.contact.length).toBe(0);
+      expect(this.book.contacts.length).toBe(0);
       this.book.addContact("Alice", "001-101-1010");
-      expect(this.book.contact.length).toBe(1);
+      expect(this.book.contacts.length).toBe(1);
     });
   });
   it("should be defined", () => {
