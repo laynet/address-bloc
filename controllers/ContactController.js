@@ -9,6 +9,7 @@ module.exports = class ContactController {
         type: "input",
         name: "name",
         message: "contact's name -",
+        email: "contact's email -",
         validate(val) {
           return val !== "";
         }
@@ -17,6 +18,7 @@ module.exports = class ContactController {
         type: "input",
         name: "name",
         message: "contact's name -",
+        email: "contact's email -",
         validate(val) {
           return val !== "";
         }
@@ -24,7 +26,7 @@ module.exports = class ContactController {
     ];
   }
 
-  addContact(name, phone) {
-    return Contact.create({ name, phone });
+  addContact(name, phone, email) {
+    return Contact.create({ name, phone, email });
   }
 };
