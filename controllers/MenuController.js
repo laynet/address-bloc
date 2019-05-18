@@ -75,6 +75,7 @@ module.exports = class MenuController {
 
   getContacts() {
     this.clear();
+
     this.book
       .getContacts()
       .then(contacts => {
@@ -83,7 +84,7 @@ module.exports = class MenuController {
         name: ${contact.name}
         phone number: ${contact.phone}
         email: ${contact.email}
-        ______________________`);
+        ---------------`);
         }
         this.main();
       })
