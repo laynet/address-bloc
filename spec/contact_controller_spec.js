@@ -66,15 +66,7 @@ describe("ContactController", () => {
         });
     });
   });
-  describe("#iterativeSearch()", () => {
-
-    
-
-    it("should return null when called with an empty array", () => {
-      expect(this.book.iterativeSearch([], "Alloy")).toBeNull();
-    });
-
-  });
+ 
 
     it("should return the contact if found", done => {
       this.book.addContact(...alloy).then(() => {
@@ -106,6 +98,16 @@ describe("search methods", () => {
   const snake = ["Solid Snake", "100-100-100", "snake@konami.com"];
   const magus = ["Magus Johnson", "101-010-101", "magus@squaresoft.com"];
   const alloy = ["Alloy Rodriguez", "111-111-111", "allow@guerrilla-games.com"];
+  describe("#iterativeSearch()", () => {
+
+    
+
+    it("should return null when called with an empty array", () => {
+      expect(this.book.iterativeSearch([], "Alloy")).toBeNull();
+    });
+
+  });
+  
   describe("#binarySearch()", () => {
     function sort(contacts) {
       return contacts.sort((a, b) => {
