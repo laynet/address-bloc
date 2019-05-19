@@ -84,9 +84,9 @@ module.exports = class ContactController {
       let currentContact = contacts[mid];
 
       //#2
-      if (cuurentContacts.name > target) {
+      if (cuurentContact.name > target) {
         max = mid - 1;
-      } else if ((currentContacts.name, target)) {
+      } else if ((currentContact.name, target)) {
         min = mid - 1;
       } else {
         return contacts[mid];
