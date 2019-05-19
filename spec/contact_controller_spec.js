@@ -51,7 +51,7 @@ describe("ContactController", () => {
         });
     });
 
-    it("should return an empty array of contacts when contacts are available", done => {
+    it("should return an array of contacts when contacts are available", done => {
       this.book
         .addContact("Alice", "001-101-1010", "alice@example.com")
         .then(() => {
@@ -64,6 +64,23 @@ describe("ContactController", () => {
           console.log(err);
           done();
         });
+    });
+
+    it("should return null when contact is not found", done => {
+      this.book.addContact(...zelda).then(() => {
+        this.book
+          .getContacts()
+          .then(contacts => {
+            expect(
+              this.book.iterativeSearch(contacts, "Alloy Rodriguez")
+            ).toBeNull();
+            done();
+          })
+          .catch(err => {
+            console.log(err);
+            done();
+          });
+      });
     });
 
     it("should return the contact if found", done => {
