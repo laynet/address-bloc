@@ -67,22 +67,14 @@ describe("ContactController", () => {
     });
   });
   describe("#iterativeSearch()", () => {
-    it("should return null when contact is not found", done => {
-      this.book.addContact(...zelda).then(() => {
-        this.book
-          .getContacts()
-          .then(contacts => {
-            expect(
-              this.book.iterativeSearch(contacts, "Alloy Rodriguez")
-            ).toBeNull();
-            done();
-          })
-          .catch(err => {
-            console.log(err);
-            done();
-          });
-      });
+
+    
+
+    it("should return null when called with an empty array", () => {
+      expect(this.book.iterativeSearch([], "Alloy")).toBeNull();
     });
+
+  });
 
     it("should return the contact if found", done => {
       this.book.addContact(...alloy).then(() => {
@@ -115,7 +107,7 @@ describe("search methods", () => {
   const magus = ["Magus Johnson", "101-010-101", "magus@squaresoft.com"];
   const alloy = ["Alloy Rodriguez", "111-111-111", "allow@guerrilla-games.com"];
   describe("#binarySearch()", () => {
-    function sort(contact) {
+    function sort(contacts) {
       return contacts.sort((a, b) => {
         if (a.name > b.name) return 1;
         else if (a.name < b.name) return -1;
@@ -125,6 +117,7 @@ describe("search methods", () => {
     it("should return null when called with an empty array", () => {
       expect(this.book.binarySearch([], "Alloy Rodriguez")).toBeNull();
     });
+
     it("should return null when contact is not found", done => {
       this.book.addContact(...zelda).then(() => {
         this.book
