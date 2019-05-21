@@ -67,4 +67,9 @@ module.exports = class ContactController {
 
     return null;
   }
+  search(name) {
+    return Contact.findOne({
+      where: { name }
+    });
+  }
 };
