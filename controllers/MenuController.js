@@ -12,7 +12,7 @@ module.exports = class MenuController {
         message: "Please choose from an option below: ",
         choices: [
           "Add new contact",
-          "view all contacts",
+          "View all contacts",
           "Search for a contact",
           "Get Date",
           "Exit"
